@@ -18,5 +18,21 @@ public class LiteralCharactersLesson {
             System.out.println("matcher2.start:\t" + matcher2.start() + "\nmatcher2.group:\t" + matcher2.group());
             System.out.println("-".repeat(20));
         }
+
+        //Pattern pattern3 = Pattern.compile("1+1=2");
+        //Pattern pattern3 = Pattern.compile("1\\+1=2");
+        Pattern pattern3 = Pattern.compile("\\Q1+1=2\\E");
+        Matcher matcher3 = pattern3.matcher("1+1=2");
+        while (matcher3.find()) {
+            System.out.println("matcher3.start:\t" + matcher3.start() + "\nmatcher3.group:\t" + matcher3.group());
+            System.out.println("-".repeat(20));
+        }
+
+        Pattern pattern4 = Pattern.compile("cat");
+        Matcher matcher4 = pattern4.matcher("He captured a catfish for his cat");
+        while (matcher4.find()) {
+            System.out.println("matcher4.start:\t" + matcher4.start() + "\nmatcher4.group:\t" + matcher4.group());
+            System.out.println("-".repeat(20));
+        }
     }
 }
